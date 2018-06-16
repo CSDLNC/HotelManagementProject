@@ -2,27 +2,28 @@
 /* *****************************         INSERT DATABASE        ******************************* */
 /* ******************************************************************************************** */
 
+USE QuanLyKhachSan;
 ------ DatPhong
 
 SET IDENTITY_INSERT DatPhong ON
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('001','1','12','5/5/2018','5/7/2018','5/13/2018','400000',N'abc','1')
+values ('001','1','002','5/5/2018','5/7/2018','5/13/2018','400000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('002','2','14','6/6/2018','6/8/2018','5/12/2018','600000',N'abc','1')
+values ('002','2','004','6/6/2018','6/8/2018','5/12/2018','600000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('003','3','15','7/7/2018','7/10/2018','5/11/2018','470000',N'abc','0')
+values ('003','3','005','7/7/2018','7/10/2018','5/11/2018','470000',N'abc','0')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('004','1','16','8/8/2018','8/10/2018','8/1/2018','120000',N'abc','1')
+values ('004','1','006','8/8/2018','8/10/2018','8/1/2018','120000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('005','2','17','9/9/2018','9/12/2018','9/4/2018','420000',N'abc','1')
+values ('005','2','001','9/9/2018','9/12/2018','9/4/2018','420000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('006','3','12','10/10/2018','10/14/2018','10/4/2018','150000',N'abc','1')
+values ('006','3','002','10/10/2018','10/14/2018','10/4/2018','150000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('007','1','15','11/11/2018','11/14/2018','11/2/2018','260000',N'abc','0')
+values ('007','1','005','11/11/2018','11/14/2018','11/2/2018','260000',N'abc','0')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('008','2','12','6/6/2018','6/7/2018','6/2/2018','630000',N'abc','1')
+values ('008','2','002','6/6/2018','6/7/2018','6/2/2018','630000',N'abc','1')
 insert into DatPhong(maDP,maLoaiPhong,maKH,ngayBatDau,ngayTraPhong,ngayDat,donGia,moTa,tinhTrang)
-values ('009','3','15','6/6/2018','6/8/2018','6/11/2018','750000',N'abc','1')
+values ('009','3','005','6/6/2018','6/8/2018','6/11/2018','750000',N'abc','1')
 SET IDENTITY_INSERT DatPhong OFF
 
 
@@ -30,15 +31,15 @@ SET IDENTITY_INSERT DatPhong OFF
 ------ HoaDon
 
 SET IDENTITY_INSERT HoaDon ON
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('01','5/5/2018',1000000,'001')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('02','6/8/2018',2000000,'002')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('03','7/8/2018',3000000,'003')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('04','8/8/2018',1000000,'004')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('05','9/10/2018',2000000,'005')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('06','10/10/2018',1500000,'006')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('07','10/10/2018',1800000,'007')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('08','6/6/2018',2000000,'008')
-insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('09','6/6/2018',900000,'009')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('001','5/5/2018',1000000,'001')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('002','6/8/2018',2000000,'002')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('003','7/8/2018',3000000,'003')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('004','8/8/2018',1000000,'004')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('005','9/10/2018',2000000,'005')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('006','10/10/2018',1500000,'006')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('007','10/10/2018',1800000,'007')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('008','6/6/2018',2000000,'008')
+insert into HoaDon(maHD,ngayThanhToan,tongTien,maDP) values ('009','6/6/2018',900000,'009')
 SET IDENTITY_INSERT HoaDon OFF
 
 
@@ -91,17 +92,17 @@ SET IDENTITY_INSERT LoaiPhong OFF
 
 SET IDENTITY_INSERT KhachHang ON
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('12',N'Nguyễn Văn A', 'anguyen','123','123456',N'lê quang định','123457','mô tả','anguyen@gmail.com')
+values ('001',N'Nguyễn Văn A', 'anguyen','123','123456',N'lê quang định','123457','mô tả','anguyen@gmail.com')
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('13',N'Nguyễn Văn B', 'bnguyen','123','123457',N'lê quang định','123458','mô tả','bnguyen@gmail.com')
+values ('002',N'Nguyễn Văn B', 'bnguyen','123','123457',N'lê quang định','123458','mô tả','bnguyen@gmail.com')
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('14',N'Nguyễn Văn C', 'cnguyen','123','123458',N'lê quang định','123459','mô tả','cnguyen@gmail.com')
+values ('003',N'Nguyễn Văn C', 'cnguyen','123','123458',N'lê quang định','123459','mô tả','cnguyen@gmail.com')
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('15',N'Nguyễn Văn D', 'dnguyen','123','123459',N'lê quang định','123455','mô tả','dnguyen@gmail.com')
+values ('004',N'Nguyễn Văn D', 'dnguyen','123','123459',N'lê quang định','123455','mô tả','dnguyen@gmail.com')
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('16',N'Nguyễn Văn E', 'enguyen','123','123455',N'lê quang định','123450','mô tả','enguyen@gmail.com')
+values ('005',N'Nguyễn Văn E', 'enguyen','123','123455',N'lê quang định','123450','mô tả','enguyen@gmail.com')
 insert into KhachHang(maKH, hoTen, tenDangNhap, matKhau, soCMND, diaChi,soDienThoai, moTa, email)
-values ('17',N'Nguyễn Văn F', 'Fnguyen','123','123450',N'lê quang định','123456','mô tả','fnguyen@gmail.com')
+values ('006',N'Nguyễn Văn F', 'Fnguyen','123','123450',N'lê quang định','123456','mô tả','fnguyen@gmail.com')
 SET IDENTITY_INSERT KhachHang OFF
 
 

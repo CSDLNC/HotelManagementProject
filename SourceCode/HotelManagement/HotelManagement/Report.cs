@@ -33,7 +33,7 @@ namespace HotelManagement
                 //B1: tạo đối tưỡng kết nối với cơ sở dữ liệu và mở kết nối
                 string strConn = ConfigurationManager.ConnectionStrings["Demo"].ToString();
                 SqlConnection connection = new SqlConnection(strConn);
-                connection = new SqlConnection(connectionstring);
+                //connection = new SqlConnection(connectionstring);
                 connection.Open();
 
                 //B2: xây dụng câu lệnh sql để thực hiện chức năng mong muốn
