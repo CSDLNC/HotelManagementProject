@@ -1,6 +1,16 @@
 ﻿USE [QuanLyKhachSan]
 GO
 
+CREATE PROCEDURE SP_UpdateStatus
+	@NUM_ROOM int, @DATE datetime, @STATUS int
+AS
+BEGIN
+	UPDATE TrangThaiPhong
+	SET tinhTrang = @STATUS
+	WHERE maPhong = @NUM_ROOM and ngay = @DATE
+END
+GO
+
 -- RESULT = 0 // FAIL
 -- RESULT = 1 // SUCCESS
 CREATE PROCEDURE SP_Booking 
