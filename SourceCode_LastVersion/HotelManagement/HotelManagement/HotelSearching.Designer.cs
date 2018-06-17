@@ -32,7 +32,6 @@
             this.giatblb = new System.Windows.Forms.Label();
             this.hangsaolb = new System.Windows.Forms.Label();
             this.thanhpholb = new System.Windows.Forms.Label();
-            this.thanhphotb = new System.Windows.Forms.TextBox();
             this.TimTheoTP_Option = new System.Windows.Forms.Button();
             this.QuayLaicl_Option = new System.Windows.Forms.Button();
             this.dangxuatlink = new System.Windows.Forms.LinkLabel();
@@ -44,6 +43,7 @@
             this.danhsachkhachsangb = new System.Windows.Forms.GroupBox();
             this.danhsachkhachsan = new System.Windows.Forms.DataGridView();
             this.DatPhongKhachSan_Option = new System.Windows.Forms.Button();
+            this.thanhphotb = new System.Windows.Forms.ComboBox();
             this.timkiemkhachsangb.SuspendLayout();
             this.danhsachkhachsangb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachkhachsan)).BeginInit();
@@ -57,11 +57,12 @@
             this.usernamelink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.usernamelink.Location = new System.Drawing.Point(1120, 9);
             this.usernamelink.Name = "usernamelink";
-            this.usernamelink.Size = new System.Drawing.Size(80, 20);
+            this.usernamelink.Size = new System.Drawing.Size(0, 20);
             this.usernamelink.TabIndex = 12;
+            this.usernamelink.Text = Login.username.ToString();
             this.usernamelink.TabStop = true;
-            this.usernamelink.Text = "username";
             this.usernamelink.VisitedLinkColor = System.Drawing.Color.Red;
+            this.usernamelink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.usernamelink_LinkClicked);
             // 
             // giatblb
             // 
@@ -92,13 +93,6 @@
             this.thanhpholb.Size = new System.Drawing.Size(80, 18);
             this.thanhpholb.TabIndex = 20;
             this.thanhpholb.Text = "Thành phố";
-            // 
-            // thanhphotb
-            // 
-            this.thanhphotb.Location = new System.Drawing.Point(11, 61);
-            this.thanhphotb.Name = "thanhphotb";
-            this.thanhphotb.Size = new System.Drawing.Size(100, 26);
-            this.thanhphotb.TabIndex = 21;
             // 
             // TimTheoTP_Option
             // 
@@ -143,16 +137,17 @@
             this.dangxuatlink.TabStop = true;
             this.dangxuatlink.Text = "Đăng xuất";
             this.dangxuatlink.VisitedLinkColor = System.Drawing.Color.Red;
+            this.dangxuatlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.dangxuatlink_LinkClicked);
             // 
             // timkiemkhachsangb
             // 
+            this.timkiemkhachsangb.Controls.Add(this.thanhphotb);
             this.timkiemkhachsangb.Controls.Add(this.TimTheoTPGC_Option);
             this.timkiemkhachsangb.Controls.Add(this.TimTheoTPHS_Option);
             this.timkiemkhachsangb.Controls.Add(this.hangsaotb);
             this.timkiemkhachsangb.Controls.Add(this.giatbtb);
             this.timkiemkhachsangb.Controls.Add(this.giatblb);
             this.timkiemkhachsangb.Controls.Add(this.TimTheoTP_Option);
-            this.timkiemkhachsangb.Controls.Add(this.thanhphotb);
             this.timkiemkhachsangb.Controls.Add(this.hangsaolb);
             this.timkiemkhachsangb.Controls.Add(this.thanhpholb);
             this.timkiemkhachsangb.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -206,7 +201,6 @@
             this.giatbtb.Name = "giatbtb";
             this.giatbtb.Size = new System.Drawing.Size(100, 26);
             this.giatbtb.TabIndex = 23;
-            this.giatbtb.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // danhsachkhachsangb
             // 
@@ -244,6 +238,14 @@
             this.DatPhongKhachSan_Option.UseVisualStyleBackColor = false;
             this.DatPhongKhachSan_Option.Click += new System.EventHandler(this.DatPhongKhachSan_Option_Click);
             // 
+            // thanhphotb
+            // 
+            this.thanhphotb.FormattingEnabled = true;
+            this.thanhphotb.Location = new System.Drawing.Point(11, 61);
+            this.thanhphotb.Name = "thanhphotb";
+            this.thanhphotb.Size = new System.Drawing.Size(96, 26);
+            this.thanhphotb.TabIndex = 27;
+            // 
             // HotelSearching
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,6 +261,7 @@
             this.Name = "HotelSearching";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HotelSearching";
+            this.Load += new System.EventHandler(this.HotelSearching_Load);
             this.timkiemkhachsangb.ResumeLayout(false);
             this.timkiemkhachsangb.PerformLayout();
             this.danhsachkhachsangb.ResumeLayout(false);
@@ -274,7 +277,6 @@
         private System.Windows.Forms.Label giatblb;
         private System.Windows.Forms.Label hangsaolb;
         private System.Windows.Forms.Label thanhpholb;
-        private System.Windows.Forms.TextBox thanhphotb;
         private System.Windows.Forms.Button TimTheoTP_Option;
         private System.Windows.Forms.Button QuayLaicl_Option;
         private System.Windows.Forms.LinkLabel dangxuatlink;
@@ -286,5 +288,6 @@
         private System.Windows.Forms.TextBox giatbtb;
         private System.Windows.Forms.Button TimTheoTPGC_Option;
         private System.Windows.Forms.Button TimTheoTPHS_Option;
+        private System.Windows.Forms.ComboBox thanhphotb;
     }
 }

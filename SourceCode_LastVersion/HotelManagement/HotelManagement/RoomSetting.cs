@@ -16,7 +16,7 @@ namespace HotelManagement
         public RoomSetting()
         {
             InitializeComponent();
-            LoadData();
+            
         }
 
         private void LoadData()
@@ -28,43 +28,45 @@ namespace HotelManagement
             for (int i = 0; i < dsKS.Rows.Count; i++)
                 danhsachphongtrong.Rows.Add(dsKS.Rows[i][0], dsKS.Rows[i][1], dsKS.Rows[i][2], dsKS.Rows[i][3], dsKS.Rows[i][4], dsKS.Rows[i][5], dsKS.Rows[i][6]);
 
+            ConnectData.DisConnect();
 
+            
         }
         
         private void InsertData(int index)
         {
             ConnectData.Connect();
             //
-            string user = "anguyen";
-            //string user = usernamelink.Name;
+            //string user = "anguyen";
+            string user = usernamelink.Text;
             //
             string numRoom = danhsachphongtrong.Rows[index].Cells[5].Value.ToString();
             int num;
             int.TryParse(numRoom, out num);
-            DateTime dateIn = DateTime.Now;
-            DateTime dateOut = dateIn.AddDays(3);
+            DateTime dateIn = DateTime.Parse(ngaynhanphongdt.Text);
+            DateTime dateOut = dateIn.AddDays(int.Parse(ngayolai.Text) );
             
             string sql = "sp_booking";
             
             int result;
             //+  user +"," + numRoom + "," + checkIn + "," + checkOut + "," + result
             result = ConnectData.ExcuteProcedure(sql, user, num, dateIn, dateOut);
+            ConnectData.DisConnect();
+
             if (result == 1)
             {
-                MessageBox.Show("We're sorry about this !! \n This room is booked. Please try book the another!", "Error");
+                MessageBox.Show("Xin lỗi quý khách !! \nPhòng này đã có người sử dụng !", "Error");
                 danhsachphongtrong.CancelEdit();
             }
             else
             {
-                MessageBox.Show("Successfull !!");
-                ConnectData.Connect();
-                Application.Restart();
+                MessageBox.Show("Đặt phòng thành công !!");
             }
         }
         private void danhsachphongtrong_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
         {
 
-            var result = MessageBox.Show("Are you really agree book room?", "Warning !!!", MessageBoxButtons.YesNo);
+            var result = MessageBox.Show("Quý khách muốn đặt phòng này?", "Warning !!!", MessageBoxButtons.YesNo);
             if (result == DialogResult.No)
             {
                 sender = danhsachphongtrong.CancelEdit();
@@ -81,27 +83,32 @@ namespace HotelManagement
                         break;
                     }
                 }
-
-                
+                danhsachphongtrong.Rows.Clear();
+                LoadData();              
             }
            
         }
-
         private void QuayLaicl_Option_Click(object sender, EventArgs e)
         {
             HotelSearching search = new HotelSearching();
             search.Show();
             this.Hide();
         }
-
         private void usernamelink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Application.Exit();
         }
-
         private void dangxuatlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            Application.Exit();
+            this.Close();
+            new MainMenu().Show();
+        }
+        private void RoomSetting_Load(object sender, EventArgs e)
+        {
+            for (int i = 0; i < 8; i++)
+                ngayolai.Items.Add(i);
+            ngayolai.SelectedIndex = 3;
+            LoadData();
         }
 
     }

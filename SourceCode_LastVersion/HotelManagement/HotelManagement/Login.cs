@@ -15,7 +15,7 @@ namespace HotelManagement
     public partial class Login : Form
     {
         private int islogin = 0; //check da dang nhap chua
-        private string username; // luu username
+        public static string username = ""; // luu username
         public Login()
         {
             if (this.islogin == 1)
@@ -59,11 +59,11 @@ namespace HotelManagement
                     if (retunvalue == "1")
                     {
                         MessageBox.Show("Đăng Nhập Thành Công !!!.");
-                        Option_sv option = new Option_sv();
-                        option.Show();
+                        new Option_cl().Show();
                         this.Hide();
                         this.islogin = 1;
-                        this.username = username.Trim();
+                        Login.username = username.Trim();
+                        
                     }
                     else
                     {

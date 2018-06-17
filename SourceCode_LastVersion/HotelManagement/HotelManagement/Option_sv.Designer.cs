@@ -76,6 +76,7 @@
             this.QuanLyThongKe.Text = "Quản lý thống kê";
             this.QuanLyThongKe.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QuanLyThongKe.UseVisualStyleBackColor = false;
+            this.QuanLyThongKe.Click += new System.EventHandler(this.QuanLyThongKe_Click);
             // 
             // QuanLyBaoCao
             // 
@@ -89,6 +90,7 @@
             this.QuanLyBaoCao.Text = "Quản lý báo cáo";
             this.QuanLyBaoCao.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.QuanLyBaoCao.UseVisualStyleBackColor = false;
+            this.QuanLyBaoCao.Click += new System.EventHandler(this.QuanLyBaoCao_Click);
             // 
             // datkhachsanserver
             // 

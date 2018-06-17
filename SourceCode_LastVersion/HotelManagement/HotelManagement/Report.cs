@@ -14,6 +14,7 @@ namespace HotelManagement
 {
     public partial class Report : Form
     {
+        String connectionstring = ConfigurationManager.ConnectionStrings["Demo"].ToString();
         SqlConnection connection = null;
         SqlCommand command = null;
         public Report()
@@ -21,6 +22,8 @@ namespace HotelManagement
             //Load += Report_Load;
             InitializeComponent();
             //Tú Anh
+            
+            connection = new SqlConnection(connectionstring);
             namtb.Enabled = false;
         }
 
@@ -31,9 +34,7 @@ namespace HotelManagement
             try
             {
                 //B1: tạo đối tưỡng kết nối với cơ sở dữ liệu và mở kết nối
-                string strConn = ConfigurationManager.ConnectionStrings["Demo"].ToString();
-                SqlConnection connection = new SqlConnection(strConn);
-                //connection = new SqlConnection(connectionstring);
+                connection = new SqlConnection(connectionstring);
                 connection.Open();
 
                 //B2: xây dụng câu lệnh sql để thực hiện chức năng mong muốn
@@ -186,7 +187,9 @@ namespace HotelManagement
 
         private void QuayLaisv_Option_Click(object sender, EventArgs e)
         {
-
+            Option_sv option = new Option_sv();
+            option.Show();
+            this.Hide();
         }
 
         private void thangcb_CheckedChanged(object sender, EventArgs e)

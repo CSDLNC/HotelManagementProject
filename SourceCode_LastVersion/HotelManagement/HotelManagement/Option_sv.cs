@@ -30,5 +30,19 @@ namespace HotelManagement
             add.Show();
             this.Hide();
         }
+
+        private void QuanLyBaoCao_Click(object sender, EventArgs e)
+        {
+            Report re = new Report();
+            re.Show();
+            this.Hide();
+        }
+
+        private void QuanLyThongKe_Click(object sender, EventArgs e)
+        {
+            Statistic st = new Statistic();
+            st.Show();
+            this.Hide();
+        }
     }
 }

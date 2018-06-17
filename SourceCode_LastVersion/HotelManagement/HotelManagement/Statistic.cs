@@ -14,13 +14,14 @@ namespace HotelManagement
 {
     public partial class Statistic : Form
     {
-
+        String connectionstring = ConfigurationManager.ConnectionStrings["Demo"].ToString();
         SqlConnection connection = null;
-        
-        
+        SqlCommand command = null;
         public Statistic()
         {
             InitializeComponent();
+            //Tú Anh
+            connection = new SqlConnection(connectionstring);
         }
 
         private void ChonThongKe_Option_Click(object sender, EventArgs e)
@@ -28,9 +29,7 @@ namespace HotelManagement
             try
             {
                 //B1: tạo đối tưỡng kết nối với cơ sở dữ liệu và mở kết nối
-                string strConn = ConfigurationManager.ConnectionStrings["Demo"].ToString();
-                SqlConnection connection = new SqlConnection(strConn);
-                SqlCommand command = null;
+                connection = new SqlConnection(connectionstring);
                 connection.Open();
 
                 //B2: xây dụng câu lệnh sql để thực hiện chức năng mong muốn
@@ -113,9 +112,11 @@ namespace HotelManagement
             }
         }
 
-
-
-
-
+        private void QuayLaisv_Option_Click(object sender, EventArgs e)
+        {
+            Option_sv option = new Option_sv();
+            option.Show();
+            this.Hide();
+        }
     }
 }

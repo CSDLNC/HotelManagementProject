@@ -43,11 +43,6 @@
             this.quanlyhoadongb = new System.Windows.Forms.GroupBox();
             this.danhsachhoadongb = new System.Windows.Forms.GroupBox();
             this.danhsachhoadon = new System.Windows.Forms.DataGridView();
-            this.STT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ngayThanhToan = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tongTien = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.maDP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.quanlyhoadongb.SuspendLayout();
             this.danhsachhoadongb.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.danhsachhoadon)).BeginInit();
@@ -66,7 +61,7 @@
             this.QuayLaisv_Option.TabIndex = 34;
             this.QuayLaisv_Option.Text = "Quay Lại";
             this.QuayLaisv_Option.UseVisualStyleBackColor = false;
-            this.QuayLaisv_Option.Click += new System.EventHandler(this.QuayLaisv_Option_Click_1);
+            this.QuayLaisv_Option.Click += new System.EventHandler(this.QuayLaisv_Option_Click);
             // 
             // ThemHoaDon_Option
             // 
@@ -81,6 +76,7 @@
             this.ThemHoaDon_Option.TabIndex = 33;
             this.ThemHoaDon_Option.Text = "Thêm";
             this.ThemHoaDon_Option.UseVisualStyleBackColor = false;
+            this.ThemHoaDon_Option.Click += new System.EventHandler(this.ThemHoaDon_Option_Click);
             // 
             // madatphonglb
             // 
@@ -129,6 +125,7 @@
             this.mahdtb.Name = "mahdtb";
             this.mahdtb.Size = new System.Drawing.Size(120, 26);
             this.mahdtb.TabIndex = 36;
+            this.mahdtb.TextChanged += new System.EventHandler(this.mahdtb_TextChanged);
             // 
             // ngaythanhtoandt
             // 
@@ -152,6 +149,7 @@
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 26);
             this.comboBox1.TabIndex = 40;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // SuaHoaDon_Option
             // 
@@ -166,6 +164,7 @@
             this.SuaHoaDon_Option.TabIndex = 41;
             this.SuaHoaDon_Option.Text = "Sửa";
             this.SuaHoaDon_Option.UseVisualStyleBackColor = false;
+            this.SuaHoaDon_Option.Click += new System.EventHandler(this.SuaHoaDon_Option_Click);
             // 
             // XoaHoaDon_Option
             // 
@@ -180,6 +179,7 @@
             this.XoaHoaDon_Option.TabIndex = 42;
             this.XoaHoaDon_Option.Text = "Xóa";
             this.XoaHoaDon_Option.UseVisualStyleBackColor = false;
+            this.XoaHoaDon_Option.Click += new System.EventHandler(this.XoaHoaDon_Option_Click);
             // 
             // quanlyhoadongb
             // 
@@ -217,45 +217,11 @@
             // 
             this.danhsachhoadon.ClipboardCopyMode = System.Windows.Forms.DataGridViewClipboardCopyMode.EnableAlwaysIncludeHeaderText;
             this.danhsachhoadon.ColumnHeadersHeight = 30;
-            this.danhsachhoadon.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.STT,
-            this.maHD,
-            this.ngayThanhToan,
-            this.tongTien,
-            this.maDP});
             this.danhsachhoadon.Location = new System.Drawing.Point(10, 22);
             this.danhsachhoadon.Name = "danhsachhoadon";
             this.danhsachhoadon.Size = new System.Drawing.Size(1205, 472);
             this.danhsachhoadon.TabIndex = 0;
-            // 
-            // STT
-            // 
-            this.STT.HeaderText = "STT";
-            this.STT.Name = "STT";
-            // 
-            // maHD
-            // 
-            this.maHD.HeaderText = "Mã hóa đơn";
-            this.maHD.Name = "maHD";
-            // 
-            // ngayThanhToan
-            // 
-            this.ngayThanhToan.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.ngayThanhToan.HeaderText = "Ngày thanh toán";
-            this.ngayThanhToan.Name = "ngayThanhToan";
-            this.ngayThanhToan.Width = 144;
-            // 
-            // tongTien
-            // 
-            this.tongTien.HeaderText = "Tổng tiền";
-            this.tongTien.Name = "tongTien";
-            // 
-            // maDP
-            // 
-            this.maDP.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            this.maDP.HeaderText = "Mã đặt phòng";
-            this.maDP.Name = "maDP";
-            this.maDP.Width = 128;
+            this.danhsachhoadon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.danhsachhoadon_CellClick);
             // 
             // InvoiceAdding
             // 
@@ -269,6 +235,7 @@
             this.Name = "InvoiceAdding";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InvoiceAdding";
+            this.Load += new System.EventHandler(this.InvoiceAdding_Load);
             this.quanlyhoadongb.ResumeLayout(false);
             this.quanlyhoadongb.PerformLayout();
             this.danhsachhoadongb.ResumeLayout(false);
@@ -294,10 +261,5 @@
         private System.Windows.Forms.GroupBox quanlyhoadongb;
         private System.Windows.Forms.GroupBox danhsachhoadongb;
         private System.Windows.Forms.DataGridView danhsachhoadon;
-        private System.Windows.Forms.DataGridViewTextBoxColumn STT;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maHD;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ngayThanhToan;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tongTien;
-        private System.Windows.Forms.DataGridViewTextBoxColumn maDP;
     }
 }

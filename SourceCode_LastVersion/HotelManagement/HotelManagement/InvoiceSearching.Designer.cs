@@ -255,6 +255,7 @@
             this.QuayLaisv_Option.TabIndex = 29;
             this.QuayLaisv_Option.Text = "Quay Lại";
             this.QuayLaisv_Option.UseVisualStyleBackColor = false;
+            this.QuayLaisv_Option.Click += new System.EventHandler(this.QuayLaisv_Option_Click);
             // 
             // InvoiceSearching
             // 

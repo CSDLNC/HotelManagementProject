@@ -117,7 +117,11 @@ namespace HotelManagement
             new InvoiceDetail().Show();
 
         }
-
+        private void QuayLaisv_Option_Click(object sender, EventArgs e)
+        {
+            new Option_sv().Show();
+            this.Hide();
+        }
     }
 
 }

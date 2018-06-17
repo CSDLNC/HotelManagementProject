@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 using System.Data.SqlTypes;
 
@@ -20,9 +19,14 @@ namespace HotelManagement
             InitializeComponent();
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        private void loadCombobox(SqlConnection conn)
         {
-
+            string query = "SELECT distinct thanhPho FROM KhachSan";
+            SqlDataAdapter da = new SqlDataAdapter(query, conn);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "thanhPho");
+            thanhphotb.DisplayMember = "thanhPho";
+            thanhphotb.DataSource = ds.Tables["thanhPho"];
         }
 
         private void TimTheoTP_Option_Click(object sender, EventArgs e)
@@ -33,7 +37,7 @@ namespace HotelManagement
 
 
             connection.Open();
-
+            
             SqlCommand cmd_tp = new SqlCommand();
             cmd_tp.CommandType = CommandType.StoredProcedure;
             cmd_tp.Connection = connection;
@@ -41,7 +45,7 @@ namespace HotelManagement
 
             SqlDataAdapter da = new SqlDataAdapter();
             DataTable dt = new DataTable();
-
+            
             cmd_tp.Parameters.Add("@City", SqlDbType.NVarChar, 30).Value = Convert.ToString(thanhphotb.Text);
 
 
@@ -276,6 +280,23 @@ namespace HotelManagement
             Option_cl option = new Option_cl();
             option.Show();
             this.Hide();
+        }
+        private void usernamelink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void dangxuatlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new MainMenu().Show();
+        }
+
+        private void HotelSearching_Load(object sender, EventArgs e)
+        {
+            string connectionString = System.Configuration.ConfigurationManager.ConnectionStrings["Demo"].ConnectionString;
+            SqlConnection connection = new SqlConnection(connectionString);
+            loadCombobox(connection);
         }
     }
 }

@@ -14,6 +14,7 @@ namespace HotelManagement
 {
     public partial class InvoiceAdding : Form
     {
+
         public InvoiceAdding()
         {
             InitializeComponent();
@@ -94,10 +95,11 @@ namespace HotelManagement
         {
             try
             {
+                string strConn = ConfigurationManager.ConnectionStrings["Demo"].ToString();
+                SqlConnection conn = new SqlConnection(strConn);
                 //ket noi database
                 SqlDataReader rd = null;
-                String connString = @"Data Source=NGUYENDINHP79CD\PHAT;Initial Catalog=QuanLyKhachSan;Integrated Security=True;User ID=sa;Password=123";
-                SqlConnection conn = new SqlConnection(connString);
+                
                 //ket noi command den procedure muon xai
                 SqlCommand cmd = new SqlCommand("SP_CreateBill", conn);
                 cmd.CommandType = CommandType.StoredProcedure;
@@ -233,14 +235,12 @@ namespace HotelManagement
 
         private void QuayLaisv_Option_Click(object sender, EventArgs e)
         {
-            
-        }
-
-        private void QuayLaisv_Option_Click_1(object sender, EventArgs e)
-        {
             Option_sv option = new Option_sv();
             option.Show();
             this.Hide();
         }
+    
+
+        
     }
 }

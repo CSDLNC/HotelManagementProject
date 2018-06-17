@@ -16,10 +16,11 @@ namespace HotelManagement
         {
             InitializeComponent();
         }
+        
 
         private void Option_cl_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -39,14 +40,16 @@ namespace HotelManagement
 
         }
 
-        private void DangXuat_Option_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void usernamelink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
 
+        }
+
+        private void dangxuatlink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            this.Close();
+            new MainMenu().Show();
         }
     }
 }

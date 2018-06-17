@@ -62,6 +62,7 @@
             this.dangxuatlink.TabStop = true;
             this.dangxuatlink.Text = "Đăng xuất";
             this.dangxuatlink.VisitedLinkColor = System.Drawing.Color.Red;
+            this.dangxuatlink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.dangxuatlink_LinkClicked);
             // 
             // usernamelink
             // 
@@ -69,13 +70,15 @@
             this.usernamelink.AutoSize = true;
             this.usernamelink.DisabledLinkColor = System.Drawing.Color.Red;
             this.usernamelink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.usernamelink.Location = new System.Drawing.Point(1137, 9);
+            this.usernamelink.Location = new System.Drawing.Point(1120, 9);
             this.usernamelink.Name = "usernamelink";
-            this.usernamelink.Size = new System.Drawing.Size(80, 20);
+            this.usernamelink.Size = new System.Drawing.Size(0, 20);
             this.usernamelink.TabIndex = 26;
             this.usernamelink.TabStop = true;
-            this.usernamelink.Text = "username";
+            this.usernamelink.Text = Login.username.ToString();
             this.usernamelink.VisitedLinkColor = System.Drawing.Color.Red;
+            this.usernamelink.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.usernamelink_LinkClicked);
+            
             // 
             // datkhachsanclient
             // 

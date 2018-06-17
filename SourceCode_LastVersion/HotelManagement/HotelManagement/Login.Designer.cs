@@ -86,6 +86,7 @@
             this.DangNhap_Option.TabIndex = 7;
             this.DangNhap_Option.Text = "Đăng Nhập";
             this.DangNhap_Option.UseVisualStyleBackColor = false;
+            
             // 
             // Login
             // 
