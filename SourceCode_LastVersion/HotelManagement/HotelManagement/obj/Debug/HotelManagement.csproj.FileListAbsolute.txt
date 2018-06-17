@@ -78,3 +78,6 @@ E:\CSDLNC\HotelManagementProject\SourceCode\HotelManagement\HotelManagement\obj\
 E:\CSDLNC\HotelManagementProject\SourceCode\HotelManagement\HotelManagement\obj\Debug\HotelManagement.csproj.GenerateResource.Cache
 E:\CSDLNC\HotelManagementProject\SourceCode\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe
 E:\CSDLNC\HotelManagementProject\SourceCode\HotelManagement\HotelManagement\bin\Debug\HotelManagement.pdb
+E:\CSDLNC\HotelManagementProject\SourceCode_LastVersion\HotelManagement\HotelManagement\bin\Debug\HotelManagement.exe.config
+E:\CSDLNC\HotelManagementProject\SourceCode_LastVersion\HotelManagement\HotelManagement\obj\Debug\HotelManagement.exe
+E:\CSDLNC\HotelManagementProject\SourceCode_LastVersion\HotelManagement\HotelManagement\obj\Debug\HotelManagement.pdb
