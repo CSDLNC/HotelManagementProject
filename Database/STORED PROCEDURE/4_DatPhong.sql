@@ -53,10 +53,11 @@ BEGIN
 	SET @RESULT = 0;
 	--GET STATUS OF THIS ROOM
 	DECLARE @STATUS int, @DATE datetime;
-	SELECT @STATUS = tt.tinhTrang, @DATE = MAX(tt.ngay) 
+	SELECT @STATUS = tt.tinhTrang
 	FROM Phong p,TrangThaiPhong tt  
-	WHERE p.maPhong = @NUM_ROOM AND p.maPhong = tt.maPhong
-	GROUP BY tt.ngay, tt.tinhTrang
+	WHERE p.maPhong = @NUM_ROOM AND p.maPhong = tt.maPhong  
+ 	GROUP BY tt.ngay, tt.tinhTrang
+	HAVING tt.ngay = MAX(tt.ngay)
 	
 	--CHECK STATUS OF THIS ROOM
 	IF (@STATUS = 0 ) 
@@ -73,8 +74,12 @@ BEGIN
 		VALUES (@TYPE, @NUM_GUEST, @CHECK_IN, @CHECK_OUT, GETDATE(), @TARIFF, @DETAIL, 1)
 
 		--UPDATE STATUS
+		SET @DATE = GETDATE()
+		WHILE (@DATE <= @CHECK_OUT) 
+		BEGIN
 		EXEC sp_UpdateStatus @NUM_ROOM, @DATE, 1
-
+		SET @DATE = @DATE + 1
+		END
 		--BOOKING IS SUCCESSFUL
 		SET @RESULT = 1;  
 		PRINT N'Đã đặt phòng thành công.'
@@ -89,5 +94,4 @@ BEGIN
 END
 
 
-
-
+GO
