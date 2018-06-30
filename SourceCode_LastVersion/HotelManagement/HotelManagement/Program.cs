@@ -32,10 +32,10 @@ namespace HotelManagement
 
             //Application.Run(new MainMenu());
             //Application.Run(new Signin());
-            //Application.Run(new Login());
+            Application.Run(new Login());
             //Application.Run(new Option_cl());
             //Application.Run(new HotelSearching());
-            Application.Run(new RoomSetting());
+            //Application.Run(new RoomSetting());
 
             //Application.Run(new Option_sv());
             //Application.Run(new InvoiceAdding());

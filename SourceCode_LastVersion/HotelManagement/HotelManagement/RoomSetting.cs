@@ -22,7 +22,7 @@ namespace HotelManagement
         private void LoadData()
         {
             ConnectData.Connect();
-            string sql = "SELECT ks.maKS,ks.tenKS,ks.thanhPho,ks.soSao,ks.giaTB,tt.maPhong,tt.tinhTrang FROM ((KhachSan ks JOIN LoaiPhong lp ON ks.maKS=lp.maKS) JOIN Phong p ON lp.maLoaiPhong=p.LoaiPhong) JOIN TrangThaiPhong tt ON p.maPhong=tt.maPhong";
+            string sql = "SELECT ks.maKS,ks.tenKS,ks.thanhPho,ks.soSao,ks.giaTB,tt.maPhong,tt.tinhTrang FROM ((KhachSan ks JOIN LoaiPhong lp ON ks.maKS = lp.maKS) JOIN Phong p ON lp.maLoaiPhong = p.LoaiPhong) JOIN TrangThaiPhong tt ON p.maPhong = tt.maPhong WHERE tt.ngay = (select max(tt1.ngay) from TrangThaiPhong tt1 where tt1.maPhong = tt.maPhong) AND tt.tinhTrang = 0";
             DataTable dsKS = new DataTable();
             dsKS = ConnectData.LoadData(string.Format(sql));
             for (int i = 0; i < dsKS.Rows.Count; i++)
